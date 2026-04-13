@@ -124,7 +124,7 @@ def independentlinear60__ffnn():
 
 def cric__lasso():
     """Lasso Regression"""
-    model = sklearn.linear_model.LogisticRegression(penalty="l1", C=0.002)
+    model = sklearn.linear_model.LogisticRegression(penalty="l1", solver="liblinear", C=0.002)
 
     # we want to explain the raw probability outputs of the trees
     model.predict = lambda X: model.predict_proba(X)[:, 1]
